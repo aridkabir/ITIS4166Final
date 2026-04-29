@@ -32,6 +32,14 @@ async function main() {
     },
   });
 
+  await prisma.user.create({
+  data: {
+    email: 'user2@example.com',
+    password,
+    role: 'user',
+    },
+});
+
   await prisma.platform.createMany({
     data: [
       { name: 'Sega Master System™', manufacturer: 'Sega', releaseYear: 1985 },
