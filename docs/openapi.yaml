@@ -342,6 +342,22 @@ paths:
           content:
             application/json:
               example:
+                - id: 1
+                  name: Sega Master System™
+                  manufacturer: Sega
+                  releaseYear: 1985
+                  _count:
+                    games: 0
+
+                - id: 2
+                  name: Nintendo Entertainment System™ (NES) / Family Computer (Famicom)
+                  manufacturer: Nintendo
+                  releaseYear: 1985
+                  _count:
+                    games: 0
+
+                - ...
+
                 - id: 29
                   name: Nintendo Switch™
                   manufacturer: Nintendo
