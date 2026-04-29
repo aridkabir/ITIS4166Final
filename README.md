@@ -4,13 +4,6 @@ A REST API for managing a video game collection. Users can create accounts, mana
 
 ---
 
-## Live Links
-
-- **API:** https://vg-collection-api-service.onrender.com  
-- **Swagger Docs:** https://vg-collection-api-service.onrender.com/api-docs  
-
----
-
 ## Tech Stack
 
 - Node.js
