@@ -6,8 +6,14 @@ function createError(status, message) {
   return error;
 }
 
-export async function getAllGames() {
-  return gameRepo.findAllGames();
+export async function getAllGames(query) {
+  const allowedSortFields = ['id', 'title', 'genre', 'releaseYear', 'createdAt'];
+  const allowedOrders = ['asc', 'desc'];
+
+  const sortBy = allowedSortFields.includes(query.sortBy) ? query.sortBy : 'id';
+  const order = allowedOrders.includes(query.order) ? query.order : 'asc';
+
+  return gameRepo.findAllGames(sortBy, order);
 }
 
 export async function getGameById(id) {
@@ -61,7 +67,7 @@ export async function updateGame(id, data) {
   if (!data.title) {
     throw createError(400, 'Title is required');
   }
-  
+
   if (!data.releaseYear) {
   throw createError(400, 'Release year is required');
 }

@@ -85,6 +85,21 @@ paths:
       tags: [Games]
       summary: Get all games
       description: Retrieve all games from the database.
+      parameters:
+        - name: sortBy
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [id, title, genre, releaseYear, createdAt]
+            example: releaseYear
+        - name: order
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [asc, desc]
+            example: desc   
       security: []
       responses:
         '200':
@@ -336,6 +351,21 @@ paths:
       summary: Get all platforms
       description: Retrieve all platforms from the database.
       security: []
+      parameters:
+        - name: sortBy
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [id, name, manufacturer, releaseYear]
+            example: releaseYear
+        - name: order
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [asc, desc]
+            example: asc
       responses:
         '200':
           description: Platforms retrieved successfully

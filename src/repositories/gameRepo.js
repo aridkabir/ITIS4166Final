@@ -1,7 +1,10 @@
 import prisma from '../config/db.js';
 
-export function findAllGames() {
+export function findAllGames(sortBy = 'id', order = 'asc') {
   return prisma.game.findMany({
+    orderBy: {
+      [sortBy]: order,
+    },
     include: {
       platforms: {
         include: {

@@ -2,7 +2,7 @@ import * as platformService from '../services/platformService.js';
 
 export async function getAllPlatforms(req, res, next) {
   try {
-    const platforms = await platformService.getAllPlatforms();
+    const platforms = await platformService.getAllPlatforms(req.query);
     res.json(platforms);
   } catch (error) {
     next(error);

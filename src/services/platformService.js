@@ -6,8 +6,14 @@ function createError(status, message) {
   return error;
 }
 
-export async function getAllPlatforms() {
-  return platformRepo.findAllPlatforms();
+export async function getAllPlatforms(query) {
+  const allowedSortFields = ['id', 'name', 'manufacturer', 'releaseYear'];
+  const allowedOrders = ['asc', 'desc'];
+
+  const sortBy = allowedSortFields.includes(query.sortBy) ? query.sortBy : 'id';
+  const order = allowedOrders.includes(query.order) ? query.order : 'asc';
+
+  return platformRepo.findAllPlatforms(sortBy, order);
 }
 
 export async function getPlatformById(id) {

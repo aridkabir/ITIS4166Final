@@ -1,9 +1,9 @@
 import prisma from '../config/db.js';
 
-export function findAllPlatforms() {
+export function findAllPlatforms(sortBy = 'id', order = 'asc') {
   return prisma.platform.findMany({
     orderBy: {
-      id: 'asc',
+      [sortBy]: order,
     },
     include: {
       _count: {
@@ -14,6 +14,7 @@ export function findAllPlatforms() {
     },
   });
 }
+
 export function findPlatformById(id) {
   return prisma.platform.findUnique({
     where: { id },
