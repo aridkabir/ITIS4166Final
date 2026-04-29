@@ -139,8 +139,18 @@ async function main() {
   );
 
   const minecraft = await createGame('Minecraft', 'Sandbox', 2011, [
+    'Microsoft Windows XP®',
+    'Microsoft Windows 7®',
     'Microsoft Windows 10+®',
+    'Mac OS X (Pre-10.14)',
+    'macOS 10.15+ (Intel)',
+    'macOS (Apple Silicon)',
+    'PlayStation®3',
+    'Xbox 360®',
+    'Wii U™',
+    'PlayStation Vita™',
     'PlayStation®4',
+    'New Nintendo 3DS™',
     'Xbox One®',
     'Nintendo Switch™',
     'PlayStation®5',
@@ -171,8 +181,13 @@ async function main() {
 
   const terraria = await createGame('Terraria', 'Sandbox', 2011, [
     'Microsoft Windows 10+®',
+    'Xbox 360®',
+    'PlayStation®3',
+    'PlayStation Vita™',
     'PlayStation®4',
     'Xbox One®',
+    'Nintendo 3DS™',
+    'Wii U™',
     'Nintendo Switch™',
   ]);
 
