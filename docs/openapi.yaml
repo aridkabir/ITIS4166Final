@@ -6,6 +6,8 @@ info:
   version: 1.0.0
 
 servers:
+  - url: https://vg-collection-api-service.onrender.com/
+    description: Production server
   - url: http://localhost:3000/api
     description: Local server
 
